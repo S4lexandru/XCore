@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Fri Feb 13 18:21:35 EET 2015
+markTmpDer=true
+builderNum=2
+outputDir=./bin/
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=main.tex
+outputFile=diploma.pdf
+langSpell=en
+markDer=true
+srcDir=

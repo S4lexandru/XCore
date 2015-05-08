@@ -1,0 +1,39 @@
+\documentclass[a4paper,12pt,twoside,openright]{book}
+\usepackage{bookman}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyhdr} 
+\usepackage{color}
+\usepackage{ifthen}
+
+\newcommand{\newevenside}{
+	\ifthenelse{\isodd{\thepage}}{\newpage}{
+	\newpage
+	\textcolor{white}{placeholder}
+	\newpage
+	}
+}
+
+\begin{document}
+\thispagestyle{empty}
+\input{titlepage}
+\thispagestyle{empty}
+\newevenside
+
+\pagestyle{fancy}
+\fancyhead[RE]{\footnotesize{\leftmark}}
+\fancyhead[RO]{\footnotesize{\thepage}}
+\fancyhead[LO]{\footnotesize{\rightmark}}
+\fancyhead[LE]{\footnotesize{\thepage}}
+\fancyfoot{}
+\setcounter{page}{1}
+\tableofcontents
+
+\input{introduction}
+
+\listoffigures
+\listoftables
+\bibliographystyle{plain} 
+\bibliography{mybib}
+
+\end{document}
