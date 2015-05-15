@@ -64,13 +64,14 @@ based on three elements:
 	\begin{itemize}
 		\item Entity --- represents a generalization of a package, type, method, 
 field 
-		\item Property ---
-		\item Groups ---
+		\item Property --- represents a general metric for an entity
+		\item Groups --- represents a tuple of one or more entities that are connected
+by a relation (e.g inheritance, composition, generalization, all elements of an
+entity, \ldots{} etc)
 	\end{itemize}
-%%% must add explications for properties and groups and entities
 	
-	The figure \ref{fig:metamodel} represents a summary of the basic concepts
-presented so far.
+	The figure \ref{fig:metamodel} represents the relationship between model,
+meta-model, and so on.
 	 
 
 \begin{figure}
@@ -97,6 +98,22 @@ information to your code so that it can be used later for generating boiler
 plate code or by enforcing constraints that can be verified at compile-time or
 run-time. \cite{book:ThinkingInJava} 
 	
+	The syntax for defining an annotation is quite straight forward:
+	\small
+	\begin{lstlisting}[language=Java,numbers=left]
+		public @interface myAnnotationName {}
+	\end{lstlisting}
+	\normalsize{}
+	Of course, as we love recursion, we have meta-annotations which allow us to
+describe important information regarding annotations such as:
+	\begin{itemize}
+	 	\item what king of elements can the current annotation annotate
+	 	\item how to store the information is provides ? (in the source file, in the
+class file, just drop it after compilation, \ldots{} etc)
+	 	\item if it can be repeated more than one time on the same element
+	 	\item if the element is  documented
+	\end{itemize}
+	
 	The most common annotations that are used in java are:
 	\begin{enumerate}
 	  \item \textbf{@Override} -- indicates that the current method is an
@@ -108,25 +125,18 @@ run-time. \cite{book:ThinkingInJava}
  
 	  \item \textbf{@SuppressWarnings} -- stop the compiler from adding annoying
  warning.
-	\end{enumerate}
-	
-	The syntax for defining an annotation is quite straight forward:
-	\small
-	\begin{lstlisting}[language=Java,numbers=left]
-		public @interface myAnnotationName {}
-	\end{lstlisting}
-	\normalsize{}
-	Of course, as we love recursion, we have meta-annotations which describe
+	\end{enumerate}	
 	
 	The more complex part comes wen we want to associate some semantics to our
-annotations. This is usually done by defining an \textbf{annotation processor},
-i.e a compiler plugin which will be invoked when our annotation(s) have been
+annotations. This is usually done by defining an \textbf{annotation
+processor}, i.e a compiler plugin which will be invoked when our annotation(s) have been
 discovered by the compiler. After each annotation processor has finished some
 extra code might have been generated or some annotations might have been
 expanded in other annotations or both, in this case the compiler starts
 processing the code and invoking the annotation processors again as can be
 seen in figure \ref{fig:annProc}.
-	 In order to be able to define an annotation processor
+	 In order to be define an annotation processor one most create a class that
+inherits  
 	
 	
 	
