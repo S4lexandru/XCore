@@ -31,8 +31,10 @@ we want view the system. Figure \ref{fig:CatModel} illustrates the idea.
 \begin{figure}
 \centering
 \scalebox{0.3}{\includegraphics{img/concepts/CatModel.png}}
-\caption{The same cat but from different perspectives\label{fig:CatModel}}
+\caption{The same cat but from different perspectives \cite{figure:CatModel}
+\label{fig:CatModel}}
 \end{figure}	
+
 	
 	In order to be able to work with models software analysis tools need to be able
 to understand and represent them, thus the need of a way to describe models. For
@@ -47,7 +49,7 @@ representation of the XML metamodel described using UML.
 
    \begin{figure}
 		\centering
-		\scalebox{0.3}{\includegraphics{img/concepts/umlMetamodel.png}}
+		\scalebox{0.5}{\includegraphics{img/concepts/umlMetamodel.png}}
 		\caption{XML metamodel\label{fig:umlMetamodel}}
 	\end{figure}
 
@@ -63,7 +65,8 @@ etc). For the purpose of this application we have used a simple meta-metamodel
 based on three elements: 
 	\begin{itemize}
 		\item Entity --- represents a generalization of a package, type, method, 
-field 
+field.
+ 
 		\item Property --- represents a general metric for an entity
 		\item Groups --- represents a tuple of one or more entities that are connected
 by a relation (e.g inheritance, composition, generalization, all elements of an
@@ -81,7 +84,7 @@ meta-model, and so on.
 \end{figure}
 		
 		
-\subsection{Java Metaprogramming}
+\subsection{Java Metadata}
 
 	
 	As mentioned above a model is nothing more or less than a simplified version of
@@ -101,11 +104,19 @@ run-time. \cite{book:ThinkingInJava}
 	The syntax for defining an annotation is quite straight forward:
 	\small
 	\begin{lstlisting}[language=Java,numbers=left]
-		public @interface myAnnotationName {}
+	public @interface CreateWarning {
+		String[] warning() default "Something is fishy"; 
+	}
 	\end{lstlisting}
 	\normalsize{}
-	Of course, as we love recursion, we have meta-annotations which allow us to
-describe important information regarding annotations such as:
+	
+	It resembles very much the definition of an interface. 
+Different properties can be defined inside the annotations. If you set a default
+value for the property it becomes optional. The type of a property can be a
+primitive types, Class<?>, enum types or String.
+ 
+	Of course, as we love recursion, we have meta-annotations which
+allow us to describe important information regarding annotations such as:
 	\begin{itemize}
 	 	\item what king of elements can the current annotation annotate
 	 	\item how to store the information is provides ? (in the source file, in the
@@ -126,21 +137,21 @@ class file, just drop it after compilation, \ldots{} etc)
 	  \item \textbf{@SuppressWarnings} -- stop the compiler from adding annoying
  warning.
 	\end{enumerate}	
-	
+
 	The more complex part comes wen we want to associate some semantics to our
-annotations. This is usually done by defining an \textbf{annotation
-processor}, i.e a compiler plugin which will be invoked when our annotation(s) have been
+annotations. This is usually done by defining an \textbf{annotation processor},
+i.e a compiler plugin which will be invoked when our annotation(s) have been 
 discovered by the compiler. After each annotation processor has finished some
 extra code might have been generated or some annotations might have been
 expanded in other annotations or both, in this case the compiler starts
 processing the code and invoking the annotation processors again as can be
 seen in figure \ref{fig:annProc}.
-	 In order to be define an annotation processor one most create a class that
-inherits  
-	
-	
-	
-		
+	 In order to define an annotation processor one most create a class that
+inherits from \code{javax.annotation.processing.AbstractProcessor}. The
+most important function is \code{process(Set<TypeElement> annotations,
+RoundEnvironment roundEnv)}, here you write your code for scanning, evaluating 
+and processing annotations and generating java files. With RoundEnviroment passed 
+as parameter you can query for elements annotated with a certain annotation.
 	
 \begin{figure}
 \centering
