@@ -9,7 +9,7 @@ be used in this paper.
 
 \section{Fundamental Concepts}
 
-\subsection{Modeling, Metamodeling}
+\subsection{Modeling, Metamodeling}\label{ch:2.1.1}
 
 
 	Object-oriented programming is a paradigm which appeared in the
@@ -30,7 +30,7 @@ we want view the system. Figure \ref{fig:CatModel} illustrates the idea.
 
 \begin{figure}
 \centering
-\scalebox{0.3}{\includegraphics{img/concepts/CatModel.png}}
+\scalebox{0.4}{\includegraphics{img/concepts/CatModel.png}}
 \caption{The same cat but from different perspectives \cite{figure:CatModel}
 \label{fig:CatModel}}
 \end{figure}	
@@ -49,7 +49,7 @@ representation of the XML metamodel described using UML.
 
    \begin{figure}
 		\centering
-		\scalebox{0.5}{\includegraphics{img/concepts/umlMetamodel.png}}
+		\scalebox{0.7}{\includegraphics{img/concepts/umlMetamodel.png}}
 		\caption{XML metamodel\label{fig:umlMetamodel}}
 	\end{figure}
 
@@ -84,7 +84,7 @@ meta-model, and so on.
 \end{figure}
 		
 		
-\subsection{Java Metadata}
+\subsection{Java Metadata}\label{ch:2.1.2}
 
 	
 	As mentioned above a model is nothing more or less than a simplified version of
@@ -101,20 +101,47 @@ information to your code so that it can be used later for generating boiler
 plate code or by enforcing constraints that can be verified at compile-time or
 run-time. \cite{book:ThinkingInJava} 
 	
-	The syntax for defining an annotation is quite straight forward:
+	The syntax for defining an annotation is quite straight forward and resembles
+very mucth the definition of an interface. The keyword used is \code{interface}
+prefixed with the 'at' (@) sign. Different properties can be defined inside the annotation. If you set a default
+value for the property it becomes optional. The type of a property can be 
+primitive types, \code{Class<?>}, enum types or String.
+	
+	E.g:
+	
+	
 	\small
 	\begin{lstlisting}[language=Java,numbers=left]
-	public @interface CreateWarning {
-		String[] warning() default "Something is fishy"; 
-	}
+	@Retention(RetentionPolicy.SOURCE)
+public @interface CreateWarning {
+	String[] warning() default "Something is fishy"; 
+}
 	\end{lstlisting}
 	\normalsize{}
 	
-	It resembles very much the definition of an interface. 
-Different properties can be defined inside the annotations. If you set a default
-value for the property it becomes optional. The type of a property can be a
-primitive types, Class<?>, enum types or String.
- 
+	Usage:
+	
+	
+	\small
+	\begin{lstlisting}[language=Java,numbers=left]
+Set<String> names = new HashSet<>();
+....
+//this message will be outputted as a warning
+@CreateWarning("unsafe cast, must change")
+String[] nameArray = (String[])names.toArray();
+	\end{lstlisting}
+	\normalsize{}
+	
+	\small
+	\begin{lstlisting}[language=Java,numbers=left]
+//the default message, will be outputted
+@CreateWarning
+public boolean equals(Object x) {
+...
+}
+	\end{lstlisting}
+	\normalsize{}
+	
 	Of course, as we love recursion, we have meta-annotations which
 allow us to describe important information regarding annotations such as:
 	\begin{itemize}
@@ -124,10 +151,12 @@ class file, just drop it after compilation, \ldots{} etc)
 	 	\item if it can be repeated more than one time on the same element
 	 	\item if the element is  documented
 	\end{itemize}
+	An example of such an annotation is provided in the definition of
+\code{@CreateWarning}, i.e \code{@Retention}.
 	
 	The most common annotations that are used in java are:
 	\begin{enumerate}
-	  \item \textbf{@Override} -- indicates that the current method is an
+	  \item \textbf{@Override} -- indicates that the current method is an \\
  (re)implementation of method from the base class.
   
 	  \item \textbf{@Deprecated} -- usually used in frameworks and indicates that
@@ -138,14 +167,14 @@ class file, just drop it after compilation, \ldots{} etc)
  warning.
 	\end{enumerate}	
 
-	The more complex part comes wen we want to associate some semantics to our
-annotations. This is usually done by defining an \textbf{annotation processor},
-i.e a compiler plugin which will be invoked when our annotation(s) have been 
-discovered by the compiler. After each annotation processor has finished some
-extra code might have been generated or some annotations might have been
-expanded in other annotations or both, in this case the compiler starts
-processing the code and invoking the annotation processors again as can be
-seen in figure \ref{fig:annProc}.
+	The most complex part comes when we want to associate some semantics 
+to our annotations. This is usually done by defining an 
+\textbf{annotation processor}, i.e a compiler plugin which will be invoked when
+our annotation(s) have been discovered by the compiler. After each 
+annotation processor has finished some extra code might have been generated or
+some annotations might have been expanded in other annotations or both, in 
+this case the compiler starts processing the code and invoking the annotation
+processors again as can be seen in figure \ref{fig:annProc}.
 	 In order to define an annotation processor one most create a class that
 inherits from \code{javax.annotation.processing.AbstractProcessor}. The
 most important function is \code{process(Set<TypeElement> annotations,
@@ -156,11 +185,70 @@ as parameter you can query for elements annotated with a certain annotation.
 \begin{figure}
 \centering
 \scalebox{0.8}{\includegraphics{img/concepts/javac-flow.png}}
-\caption{The compiler process with annotation processing\label{fig:annProc}}
+\caption{The compiler process with annotation
+processing\cite{figure:javac-flow}\label{fig:annProc}}
 \end{figure}
 		
 
-\section{CodePro}
+\section{Tools: CodePro}\label{ch:2.2}
 
+
+	
+	Software analysis tools are usually used by developers when something went
+wrong or when someone wants to validate an idea. The developer will be running
+the analysis tool(s) to compute complex metrics and interpreting the abstract numbers 
+that the tool outputted and will try, in case of abnormal values, to find the
+problem and propose a solution for it. The entire process is a pain kill and
+mostly likely comes in the most inappropriate moment. \cite{tools:inCode}.
+
+\begin{figure}[h]
+\centering
+\scalebox{0.5}{\includegraphics{img/concepts/inCodeOverview.png}}
+\caption{inCode overview \cite{tools:inCode} \label{fig:inCodeOverview}}
+\end{figure}
+
+	CodePro, or by its comercial name INCODE \cite{site:inCode}, is an eclipse
+plugin which plans to solve this shortcomings of analysis tools by providing
+continuous analysis of the code, marking problems solved and detecting new ones,
+also providing arguments and tips on why was the problem detected, what causes
+it and how it can be solved. In the figures \ref{fig:inCodeTips} and
+\ref{fig:inCodeOverview} you can see examples of the features mentioned above.
+
+\begin{figure}
+\centering
+\scalebox{0.4}{\includegraphics{img/concepts/inCodeTips.png}}
+\caption{inCode tips \cite{tools:inCode} \label{fig:inCodeTips}}
+\end{figure}
+
+
+	From an architectural point of view CodePro defines its own meta-metamodel 
+,very similar to the one presented in \ref{ch:2.1.1}, but more complex. The
+metamodel which is used is the one provided by Eclipse JDT library, wrapped to fit the
+meta-metamodel defined. In \ref{fig:codeProUML} you can see an overview of the
+general architecture. From analyzing the diagram we can spot some architectural 
+problems related to type safety such as:
+	\begin{itemize}
+	  \item using strings in order to identify different metrics, types, filters 
+ \ldots{} etc.  What will happen when someone changes the name of the entity ? 
+ What if we write Class instead of class ? \\
+\code{aSystem.getGroup("class group").applyFilter("model class");} 
+	 
+	  \item property computers accept abstract entities instead of specific 
+elements for which the computers are defined. The semantic definition is not 
+preserved. If we use the Cyclomatic Complexity metric on a class or package  
+instead of a method ? What is the expected return type ? \\
+\code{public ResultEntity compute(AbstractEntityInterface anEntity)}
+
+	\end{itemize}
+	The tool that I have created is aimed at solving this shortcoming by providing
+a way in which you can define a metamodel and it will generate, based on the
+provided metadata, a model, everything done in a type safe manner.
+
+\begin{figure}
+\centering
+\scalebox{0.4}{\includegraphics{img/concepts/codeProUML.png}}
+\caption{CodePro meta-metamodel and meta-model overview}
+\label{fig:codeProUML}
+\end{figure}
 
 
