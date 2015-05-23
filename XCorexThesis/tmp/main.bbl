@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+
+\bibitem{figure:eclipsePlugin}
+Chris Aniszczyk.
+\newblock Plug-in development 101, part 1: The fundamentals.
+\newblock
+  \url{http://www.ibm.com/developerworks/library/os-eclipse-plugindev1/}, 2008.
+
+\bibitem{figure:CatModel}
+Grady Booch.
+\newblock \url{http://www.evinw.com/w/oop-concepts-php/}.
+
+\bibitem{dictionary:modeling}
+English Dictionary.
+\newblock \url{http://dictionary.reference.com/browse/modeling}.
+
+\bibitem{book:ThinkingInJava}
+Bruce Eckel.
+\newblock {\em Thinking in Java}.
+\newblock Prentice Hall, 2006.
+
+\bibitem{book:UMLDistilled}
+Martin Fowler.
+\newblock {\em UML Distilled: A Brief Guide to the Standard Object Modeling
+  Language}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 3
+  edition, 2003.
+
+\bibitem{site:inCode}
+LOOSE~Reasearch Group.
+\newblock \url{http://loose.upt.ro/reengineering/research/codepro}.
+
+\bibitem{tools:iPlasma}
+C.~Marinescu, R.~Marinescu, P.~F. Mihancea, and R.~Wettel.
+\newblock iplasma: An integrated platform for quality assessment of
+  object-oriented design.
+\newblock In {\em In ICSM (Industrial and Tool Volume)}, pages 77--80. Society
+  Press, 2005.
+
+\bibitem{tools:inCode}
+Radu Marinescu, George Ganea, and Ioana Verebi.
+\newblock Incode: Continuous quality assessment and improvement.
+\newblock {\em 2011 15th European Conference on Software Maintenance and
+  Reengineering}, 0:274--275, 2010.
+
+\bibitem{figure:javac-flow}
+neildo.
+\newblock Project lombok - trick explained.
+\newblock \url{http://notatube.blogspot.ro/2010_11_01_archive.html}, 2010.
+
+\bibitem{website:metaprogramming}
+Abdelmonaim Remani.
+\newblock The art of metaprogramming in java.
+\newblock
+  \url{http://www.slideshare.net/PolymathicCoder/the-art-of-metaprogramming-in-java},
+  2012.
+
+\bibitem{wiki:oop}
+Wikipedia.
+\newblock \url{http://en.wikipedia.org/wiki/Object-oriented_programming}.
+
+\bibitem{wiki:meta}
+Wikipedia.
+\newblock \url{http://en.wikipedia.org/wiki/Meta}.
+
+\end{thebibliography}

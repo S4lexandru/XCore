@@ -1,0 +1,587 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  23 MAY 2015 18:00
+entering extended mode
+ restricted \write18 enabled.
+ Source specials enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/bookman.sty
+Package: bookman 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count89
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count90
+\lst@currlwidth=\dimen105
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen106
+\lst@width=\dimen107
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen108
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/03/04 1.5c (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/03/04 1.5c listings configuration
+))
+Package: listings 2014/03/04 1.5c (Carsten Heinz)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip43
+\f@ncyO@elh=\skip44
+\f@ncyO@erh=\skip45
+\f@ncyO@olh=\skip46
+\f@ncyO@orh=\skip47
+\f@ncyO@elf=\skip48
+\f@ncyO@erf=\skip49
+\f@ncyO@olf=\skip50
+\f@ncyO@orf=\skip51
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 137.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/epigraph/epigraph.sty
+Package: epigraph 2009/09/02 v1.5c typesetting epigraphs
+\beforeepigraphskip=\skip52
+\afterepigraphskip=\skip53
+\epigraphwidth=\skip54
+\epigraphrule=\skip55
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count97
+\rotFPtop=\skip56
+\rotFPbot=\skip57
+\rot@float@box=\box28
+\rot@mess@toks=\toks16
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/inconsolata/inconsolata.sty
+Package: inconsolata 2013/06/09 zi4a
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+\zifour@ocount=\count98
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/03/04 1.5c listings language file
+)
+(./main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 54.
+ (/usr/local/texlive/2014/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Try loading font information for T1+pbk on input line 54.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/t1pbk.fd
+File: t1pbk.fd 2001/06/04 font definitions for T1/pbk.
+)
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <12> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 54.
+
+(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count99
+\scratchdimen=\dimen109
+\scratchbox=\box29
+\nofMPsegments=\count100
+\nofMParguments=\count101
+\everyMPshowfont=\toks17
+\MPscratchCnt=\count102
+\MPscratchDim=\dimen110
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
+\everyMPtoPDFconversion=\toks18
+) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count105
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(./titlepage.tex <../img/header.png, id=1, 695.59875pt x 112.42pt>
+File: ../img/header.png Graphic file (type png)
+
+<use ../img/header.png>
+Package pdftex.def Info: ../img/header.png used on input line 3.
+(pdftex.def)             Requested size: 390.0pt x 63.03024pt.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <24.88> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <24.88> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `T1/pbk/bx/sc' in size <24.88> not available
+(Font)              Font shape `T1/pbk/b/sc' tried instead on input line 6.
+LaTeX Font Info:    Font shape `T1/pbk/b/sc' in size <24.88> not available
+(Font)              Font shape `T1/pbk/db/sc' tried instead on input line 6.
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <12> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <12> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <14.4> not available
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 17.
+ [1
+
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../img/
+header.png>]) [2] (./main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ (./introduction.tex
+[1
+
+]
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 1.
+ [2
+
+]
+Chapter 1.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <17.28> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 3.
+) (./concepts.tex [3] [4
+
+]
+Chapter 2.
+LaTeX Font Info:    Font shape `T1/pbk/m/n' in size <10.95> not available
+(Font)              Font shape `T1/pbk/l/n' tried instead on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 4.
+LaTeX Font Info:    Font shape `T1/pbk/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/b/n' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/pbk/b/n' in size <14.4> not available
+(Font)              Font shape `T1/pbk/db/n' tried instead on input line 12.
+[5] <../img/concepts/CatModel.png, id=31, 843.15pt x 771.88374pt>
+File: ../img/concepts/CatModel.png Graphic file (type png)
+
+<use ../img/concepts/CatModel.png>
+Package pdftex.def Info: ../img/concepts/CatModel.png used on input line 33.
+(pdftex.def)             Requested size: 843.14793pt x 771.88185pt.
+
+<../img/concepts/umlMetamodel.png, id=32, 478.78876pt x 265.99374pt>
+File: ../img/concepts/umlMetamodel.png Graphic file (type png)
+
+<use ../img/concepts/umlMetamodel.png>
+Package pdftex.def Info: ../img/concepts/umlMetamodel.png used on input line 52
+.
+(pdftex.def)             Requested size: 478.78758pt x 265.99309pt.
+ [6 <../img/concepts/CatModel.png>]
+LaTeX Font Info:    Try loading font information for TS1+pbk on input line 67.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ts1pbk.fd
+File: ts1pbk.fd 2001/06/04 font definitions for TS1/pbk.
+)
+LaTeX Font Info:    Font shape `TS1/pbk/m/n' in size <12> not available
+(Font)              Font shape `TS1/pbk/l/n' tried instead on input line 67.
+
+Overfull \hbox (10.1762pt too wide) in paragraph at lines 67--69
+[][]\T1/pbk/l/n/12 Entity --- rep-re-sents a gen-er-al-iza-tion of a pack-age, 
+type, method,
+ []
+
+<../img/concepts/metamodel.png, id=36, 311.1625pt x 448.67625pt>
+File: ../img/concepts/metamodel.png Graphic file (type png)
+
+<use ../img/concepts/metamodel.png>
+Package pdftex.def Info: ../img/concepts/metamodel.png used on input line 82.
+(pdftex.def)             Requested size: 311.16174pt x 448.67516pt.
+ [7 <../img/concepts/umlMetamodel.png>]
+[8 <../img/concepts/metamodel.png>]
+<../img/concepts/eclipsePlugin.jpg, id=44, 501.875pt x 291.0875pt>
+File: ../img/concepts/eclipsePlugin.jpg Graphic file (type jpg)
+
+<use ../img/concepts/eclipsePlugin.jpg>
+Package pdftex.def Info: ../img/concepts/eclipsePlugin.jpg used on input line 1
+22.
+(pdftex.def)             Requested size: 501.87376pt x 291.08678pt.
+ [9 <../img/concepts/eclipsePlugin.jpg>]
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 145.
+(/usr/local/texlive/2014/texmf-dist/tex/latex/inconsolata/t1zi4.fd
+File: t1zi4.fd 2013/06/09 T1/zi4 (Inconsolata)
+)
+Overfull \hbox (3.62277pt too wide) in paragraph at lines 183--185
+[][]\T1/pbk/l/n/12 Of course, as we love re-cur-sion, we have meta-annotations 
+which
+ []
+
+[10]
+Overfull \hbox (23.42346pt too wide) in paragraph at lines 208--222
+\T1/pbk/l/n/12 tant func-tion is \T1/zi4/m/n/12 process(Set<TypeElement> annota
+tions, RoundEnvironment
+ []
+
+<../img/concepts/javac-flow.png, id=52, 481.8pt x 60.225pt>
+File: ../img/concepts/javac-flow.png Graphic file (type png)
+
+<use ../img/concepts/javac-flow.png>
+Package pdftex.def Info: ../img/concepts/javac-flow.png used on input line 225.
+
+(pdftex.def)             Requested size: 481.79881pt x 60.22484pt.
+
+Overfull \hbox (7.22054pt too wide) in paragraph at lines 231--236
+\T1/pbk/l/n/12 tions such as re-flec-tion by reify-ing pro-gram el-e-ments such
+ as classes
+ []
+
+[11 <../img/concepts/javac-flow.png>] [12]
+<../img/concepts/inCodeOverview.png, id=61, 546.04pt x 256.96pt>
+File: ../img/concepts/inCodeOverview.png Graphic file (type png)
+
+<use ../img/concepts/inCodeOverview.png>
+Package pdftex.def Info: ../img/concepts/inCodeOverview.png used on input line 
+276.
+(pdftex.def)             Requested size: 546.03867pt x 256.95937pt.
+
+<../img/concepts/inCodeTips.png, id=62, 924.45375pt x 227.85126pt>
+File: ../img/concepts/inCodeTips.png Graphic file (type png)
+
+<use ../img/concepts/inCodeTips.png>
+Package pdftex.def Info: ../img/concepts/inCodeTips.png used on input line 289.
+
+(pdftex.def)             Requested size: 924.45149pt x 227.8507pt.
+ [13 <../img/concepts/inCodeOverview.png> <../img/concepts/inCodeTips.png>]
+Overfull \hbox (1.7747pt too wide) in paragraph at lines 306--311
+\T1/zi4/m/n/12 public ResultEntity compute(AbstractEntityInterface anEntity) 
+ []
+
+<../img/concepts/codeProUML.png, id=68, 869.2475pt x 664.4825pt>
+File: ../img/concepts/codeProUML.png Graphic file (type png)
+
+<use ../img/concepts/codeProUML.png>
+Package pdftex.def Info: ../img/concepts/codeProUML.png used on input line 319.
+
+(pdftex.def)             Requested size: 869.24538pt x 664.48087pt.
+) (./solution.tex [14] [15 <../img/concepts/codeProUML.png (PNG copy)>] [16
+
+]
+Chapter 3.
+<../img/solution/XCorexSystem.png, id=78, 641.39626pt x 536.0025pt>
+File: ../img/solution/XCorexSystem.png Graphic file (type png)
+
+<use ../img/solution/XCorexSystem.png>
+Package pdftex.def Info: ../img/solution/XCorexSystem.png used on input line 26
+.
+(pdftex.def)             Requested size: 641.39468pt x 536.00119pt.
+ [17]
+Overfull \hbox (15.33307pt too wide) in paragraph at lines 53--60
+\T1/pbk/l/n/12 which will be pre-sented in the sec-tion be-low form the meta-me
+tamodel
+ []
+
+
+Underfull \vbox (badness 1983) has occurred while \output is active []
+
+ [18 <../img/solution/XCorexSystem.png>] [19] [20]
+<../img/solution/xCorexError.png, id=93, 821.0675pt x 244.915pt>
+File: ../img/solution/xCorexError.png Graphic file (type png)
+
+<use ../img/solution/xCorexError.png>
+Package pdftex.def Info: ../img/solution/xCorexError.png used on input line 175
+.
+(pdftex.def)             Requested size: 821.0655pt x 244.91438pt.
+) (./evaluation.tex
+Underfull \vbox (badness 6641) has occurred while \output is active []
+
+ [21 <../img/solution/xCorexError.png>] [22]
+Chapter 4.
+) (./futureWork.tex [23
+
+] [24
+
+]
+Chapter 5.
+) [25] [26
+
+] (./main.lof)
+\tf@lof=\write4
+\openout4 = `main.lof'.
+
+ [27] [28
+
+] (./main.lot)
+\tf@lot=\write5
+\openout5 = `main.lot'.
+
+ (./main.bbl [29] [30
+
+]
+Underfull \hbox (badness 3209) in paragraph at lines 4--8
+\T1/pbk/l/n/12 fun-da-men-tals.  $\T1/zi4/m/n/12 http : / / www . ibm . com / d
+eveloperworks / library /
+ []
+
+LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <12> not available
+(Font)              Font shape `T1/pbk/l/it' tried instead on input line 19.
+
+Underfull \hbox (badness 4621) in paragraph at lines 52--57
+[][]\T1/pbk/l/n/12 Abdelmonaim Re-mani.  The art of metapro-gram-ming
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--57
+\T1/pbk/l/n/12 in java.  $\T1/zi4/m/n/12 http : / / www . slideshare . net / Po
+lymathicCoder /
+ []
+
+
+Underfull \hbox (badness 6300) in paragraph at lines 59--61
+[][]\T1/pbk/l/n/12 Wikipedia.  $\T1/zi4/m/n/12 http : / / en . wikipedia . org 
+/ wiki / Object-[]oriented _
+ []
+
+[31]) [32] (./main.aux) ) 
+Here is how much of TeX's memory you used:
+ 4199 strings out of 493117
+ 60208 string characters out of 6135433
+ 145451 words of memory out of 5000000
+ 7539 multiletter control sequences out of 15000+600000
+ 27775 words of font info for 54 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,12n,43p,237b,1635s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/in
+consolata/i4-t1-0.enc}{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/inconsolata/Incon
+solata-zi4r.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/bookman/ubk
+d8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/bookman/ubkl8a.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb>
+Output written on main.pdf (34 pages, 1589602 bytes).
+PDF statistics:
+ 150 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+
