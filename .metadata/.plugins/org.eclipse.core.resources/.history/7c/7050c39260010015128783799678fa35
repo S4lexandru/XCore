@@ -193,10 +193,11 @@ specified type as can be seen in figure \ref{fig:xCorexUnderlyingObject}
 \label{fig:xCorexTypeDialogBox}
 \end{figure}
 
-	The implementation classes are not publicly available.
+The implementation classes are not publicly available.
 In order to be able to instantiate an element a FacetoryMethod class is
 generated which also has cache support to increase speed and avoid useless
 object instantiation.
+	Also each
 	
 	
 \begin{figure}

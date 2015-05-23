@@ -17,7 +17,7 @@
 \contentsline {subsubsection}{Interface Component}{19}
 \contentsline {subsubsection}{Annotation Processor}{20}
 \contentsline {section}{\numberline {3.2}XCorexView}{22}
-\contentsline {subsection}{\numberline {3.2.1}InsiderView overview}{22}
+\contentsline {subsection}{\numberline {3.2.1}Overview}{22}
 \contentsline {subsection}{\numberline {3.2.2}What has changed}{22}
 \contentsline {chapter}{\numberline {4}Evaluation}{23}
 \contentsline {section}{\numberline {4.1}The Good and Bad}{23}
