@@ -23,7 +23,7 @@ possible.
 	 
 \begin{figure}
 \centering
-\scalebox{0.5}{\includegraphics{img/solution/XCorexSystem.png}}
+\scalebox{0.5}{\includegraphics{../img/solution/XCorexSystem.png}}
 \caption{XCorex System overview}
 \label{fig:XCorexSystem}
 \end{figure}
@@ -98,9 +98,7 @@ similar to:
 @GroupBuilder
 public class ListOfMethods implements IGroupBuilder<XMethod, XClass> {
 	@Override
-	public Group<XMethod> buildGroup (XClass entity) {
-		\ldots{}
-	}
+	public Group<XMethod> buildGroup (XClass entity) {}
 }
 \end{lstlisting}
 	\normalsize{} 
@@ -156,13 +154,27 @@ exclusive
 \ref{fig:xCorexError} is presented.
 	For the rest of the elements, which are valid, the entity type defined in the
 interface as a type parameter is extracted by using the mirror api provided by
-the compiler and the appropriate code. For each unique entity type found an
+the compiler and the appropriate code. For each unique entity type found, an
 interface is generated which implements the XEntity markup interface and which
 contains a method for every PropertyComputer that uses this type and a method
 for every GroupBuilder which uses this entity for generating the elements of the
-group. 
+group. Also if any comments are associated with the PropertyComputers or
+GroupBuilders they are preserved in the generated code. 
 	
-
+	Each interface generated in the previous step is implemented by defining the
+appropriate class in an impl package. The class will implement every method
+defined in the interface by simply instantiating and object of the appropriate
+PropertyComputer or GroupBuilder and call the compute method by passing a
+reference to \code{this}. The implementation classes are not publicly available.
+In order to be able to instantiate an element a FacetoryMethod class is
+generated which also has cache support to increase speed and avoid useless
+object instantiation.
+	
+\begin{figure}
+\centering
+\scalebox{0.4}{\includegraphics{../img/solution/xCorexError.png}}
+\label{fig:xCorexError}
+\end{figure}
 
 \section {XCorexView}
 
