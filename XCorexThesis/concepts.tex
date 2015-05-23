@@ -82,8 +82,48 @@ meta-model, and so on.
 \scalebox{0.5}{\includegraphics{img/concepts/metamodel.png}}
 \caption{Models and Metamodels\label{fig:metamodel}}
 \end{figure}
-		
-		
+
+\subsection{Ecliplse plugin}
+	
+	In computing, a plug-in is a software component that adds a specific feature to an existing software application. 
+When an application supports plug-ins, it enables customization. 
+	The best software analogy compares a plug-in to an object in object-oriented
+	programming. A plug-in, like an object, is an encapsulation of behavior and/or data that interacts with other plug-ins to form a running program.
+	Eclipse is an extremely popular Java Integrated Development Environment (IDE)
+and a strong competitor to NetBeans/SunOne Studio, JBuilder, and IntelliJ IDEA.
+	Eclipse is made of a small core, with many plugins layered on top. Some plugins are nothing more than libraries that other plugins can use.
+These are the many tools at your disposal for the job. The base libraries used by all plugins are:
+
+	\begin{itemize}
+	\item The Standard Widget Toolkit (SWT): Graphical components used everywhere
+in Eclipse: buttons, images, cursors, labels, etc. Layout management classes. This library is usually meant to be used instead of Swing.
+JFace: Classes for menus and toolbars, dialogs, preferences, fonts, images,
+text files, and base classes for wizards.
+	\item The Plugin Developer Environment (PDE): Classes to help with the data
+manipulation, extensions, build process, and wizards.
+	\item The Java Developer Toolkit (JDT): Classes used to programmatically
+manipulate Java code.
+	\end{itemize}
+	
+	An Eclipse plug-in has the following main configuration files. These files are
+defining the API, and the dependencies of the plug-in. MANIFEST.MF - contains the OSGi configuration information.
+plugin.xml - optional configuration file, contains information about Eclipse specific extension mechanisms.
+An Eclipse plug-in defines its meta data, like its unique identifier, its exported API and its dependencies via the MANIFEST.MF file.
+The plugin.xml file provides the possibility to create and contribute to Eclipse specific API. You can add extension points and extensions in this file.
+Extension-points define interfaces for other plug-ins to contribute functionality. Extensions contribute functionality to these interfaces. 
+Functionality can be code and non-code based. For example a plug-in might
+contain help content.
+
+	In figure \ref{fig:eclipsePlugin} you can see an example of a development
+process for a plugin.
+
+\begin{figure}[h]
+\centering
+\scalebox{0.3}{\includegraphics{img/concepts/eclipsePlugin.jpg}}
+\caption{Eclipse Plugin Development \cite{figure:eclipsePlugin}}
+\label{fig:eclipsePlugin}
+\end{figure}	
+
 \subsection{Java Metadata}\label{ch:2.1.2}
 
 	
@@ -108,8 +148,6 @@ value for the property it becomes optional. The type of a property can be
 primitive types, \code{Class<?>}, enum types or String.
 	
 	E.g:
-	
-	
 	\small
 	\begin{lstlisting}[language=Java,numbers=left]
 	@Retention(RetentionPolicy.SOURCE)
@@ -188,7 +226,39 @@ as parameter you can query for elements annotated with a certain annotation.
 \caption{The compiler process with annotation
 processing\cite{figure:javac-flow}\label{fig:annProc}}
 \end{figure}
-		
+
+\subsection{Mirror API}
+	Object-oriented languages traditionally support meta-level opera- tions such as
+reflection by reifying program elements such as classes into objects that support reflective operations such as get- Superclass or getMethods.
+	In a typical object oriented language with reflection, (e.g., Java, C\#,
+Smalltalk, CLOS) one might query an instance for its class, as indicated in the pseudo-code below:
+\small
+\begin{lstlisting}[language=Java,numbers=left]
+class Car {...}
+Car myCar = new Car();
+int numberOfDoors = myCar.numberOfDoors(); 
+Class theCarsClass = myCar.getClass();
+\end{lstlisting}
+\normalsize{}
+
+	Another approach is used in many scripting languages. The language constructs themselves introduce code on the fly, modifying the program as they are executed. 
+For example, a class comes into being when a class declaration is evaluated, and might change if another declaration of a class with the same name is executed later.
+The third approach is that of mirrors, and originates in Self. Mirrors have
+been used in class based systems such as Strongtalk, and even in the Java world. JDI, the Java Debugger Interface, is a mirror based reflective API. 
+Here, the reflective operations are separated into distinct objects called mirrors. This seemingly minor restructuring has significant implications. 
+Reflection is no longer tied into the behavior of every object in the system (as it is via getClass()) or (even worse) into the very syntax of the language.
+Instead, it resides in separable components that can be removed or replaced. Reflection is now a distinct capability, in the sense of the object capability model.
+	The most important thing understand about mirrors is that they decouple the reflection API from the standard object API, 
+so instead of obj.getClass() you use reflect(obj). It's a seemingly small difference, but it gives you a few nice things:
+	\begin{itemize}
+		\item The object API isn't polluted, and there's no danger of breaking
+reflection by overriding a reflective method.
+		\item You can potentially have different mirror systems. Say, one that doesn't
+allow access to private methods. This could end up being very useful for tools.
+		\item The mirror system doesn't have to be included. For compiling to JS this
+can be important. If mirrors aren't used then there's no out-of-band to access code and pruning becomes viable.
+Mirrors can be made to work on remote code, not just local code, since you don't need the reflected object to be in the same Isolate or VM as the mirror.	
+	\end{itemize}
 
 \section{Tools: CodePro}\label{ch:2.2}
 
@@ -250,5 +320,4 @@ provided metadata, a model, everything done in a type safe manner.
 \caption{CodePro meta-metamodel and meta-model overview}
 \label{fig:codeProUML}
 \end{figure}
-
 

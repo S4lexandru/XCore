@@ -49,12 +49,119 @@ components and generates the appropriate model.
 \subsection{Implementation Details}
 
 \subsubsection{Annotation Component}
+
+	The annotations we have defined combined with the interfaces, which will be
+presented in the section below form the meta-metamodel of our program as
+describe in section \ref{ch:2.1.1}.
+	As you can see in the code sections below the annotations are only allowed to
+annotate java types, to be more specific only classes, and help us distinguish between
+group builders, which describe any type of relation between a series of elements of the same type, and property
+computers which represent a general description of a metric. 
+
+		\small
+	\begin{lstlisting}[language=Java,numbers=left]
+@Target(ElementType.TYPE)
+public @interface GroupBuilder {}	
+	\end{lstlisting}
+	\normalsize{} \label{codeSection:GroupBuild}
 	
-	This component describes two 
+		\small
+	\begin{lstlisting}[language=Java,numbers=left]
+@Target(ElementType.TYPE)
+public @interface PropertyComputer {}
+	\end{lstlisting}
+	\normalsize{} \label{codeSection:PropertyComputer} 
 
 \subsubsection{Interface Component}
 
+	Both annotations presented above force the annotated type to implement a
+specific interface which assures us type safety through generics. For the
+GroupBuilder annotation we have the IGroupBuilder interface and for the
+PropertyComputer annotation we have the IPropertyComputer interface, both
+definitions can be seen below.
+
+	\small
+	\begin{lstlisting}[language=Java,numbers=left]
+public interface IGroupBuilder <ElementType extends XEntity, 
+                 Entity extends XEntity> {
+	Group<ElementType> buildGroup(Entity entity);
+}
+	\end{lstlisting}
+	\normalsize{} \label{codeSection:IGroupBuilder}
+	
+	For the GroupBuilder the ElementType represents the type for the aggregated
+elements and the entity represent the aggregator type. For example if we want to
+define the group of all methods for a class we would have something very
+similar to:
+	\small
+\begin{lstlisting}[language=Java,numbers=left]
+@GroupBuilder
+public class ListOfMethods implements IGroupBuilder<XMethod, XClass> {
+	@Override
+	public Group<XMethod> buildGroup (XClass entity) {
+		\ldots{}
+	}
+}
+\end{lstlisting}
+	\normalsize{} 
+	
+	\small
+	\begin{lstlisting}[language=Java,numbers=left]
+public interface IPropertyComputer <ReturnType, Entity extends XEntity> {
+	ReturnType compute(Entity entity);
+}	
+	\end{lstlisting}
+	\normalsize{} \label{codeSection:IPropertyComputer}
+	
+	The ReturnType can be any type which makes sens for the current metric
+to return (Double, Integer, String, Pair<>, \ldots{} etc). 
+	The XEntity represents a markup interface which define the elements of our
+metamodel which we will be generating when the compilation process starts and
+the annotation processor is invoked. The Entity type which is present in both 
+interfaces must not exists before, because it will be generated.
+		
 \subsubsection{Annotation Processor}
+	
+	All of the elements presented above, annotations and interfaces, are defined 
+by using the java syntax and thus we are confident that they will be used
+correctly from that point of view, but they also have semantics attached which
+cannot be enforced by syntax alone. In order to enforce the appropriate
+semantics we have defined an annotation processor which will parse every
+relevant project files, java files which contain elements annotated with the
+elements presented in the sections above, it will analyze every elements and, if
+needed, will generate the appropriate  errors or warnings.
+	The process of discovering which elements are annotated and with what kind of
+annotations is the responsibility of the compiler. Once our requested
+annotations are identified the compiler will invoke the processor by calling
+the \code{process(Set<? extends TypeElement> annotations,RoundEnvironment roundEnv)}
+method with the annotations it identified and are relevant for us, and the
+corresponding java elements that are attached to them. 
+	Each element is processed, first starting with the PropertyComputers and
+continuing with the GroupBuilders, and the following rules are enforced:
+	
+	\begin{itemize}
+	  \item All elements that are annotated must be classes
+	  \item All annotated classes must have a default constructor.
+	  \item All elements annotated with @PorpertyComputer must implement
+ IPropertyComputer
+ 	  \item All elements annotated with @GroupBuilder must implement
+ IGroupBuilder
+ 	  \item  All classes cannot be present in the default package
+ 	  \item  The @PropertyComputer and @GroupBuilder annotations are mutually
+exclusive
+	  \item  No wildcard types are allowed to be specified for the entity type
+ parameter.
+	\end{itemize}
+	When an invalid element is encounter an error similar to the one in figure
+\ref{fig:xCorexError} is presented.
+	For the rest of the elements, which are valid, the entity type defined in the
+interface as a type parameter is extracted by using the mirror api provided by
+the compiler and the appropriate code. For each unique entity type found an
+interface is generated which implements the XEntity markup interface and which
+contains a method for every PropertyComputer that uses this type and a method
+for every GroupBuilder which uses this entity for generating the elements of the
+group. 
+	
 
 
 \section {XCorexView}
