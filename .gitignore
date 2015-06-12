@@ -1,5 +1,11 @@
 .metadata/
 .recommenders/
+.project
+*.aux
+*.log
+*.toc
+*.synctex.gz
+*.swp
 Testing/
 XCorex/
 XCorexView/

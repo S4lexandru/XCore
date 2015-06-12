@@ -1,4 +1,4 @@
-\chapter{Yet another tool: XCore }\label{ch:3}
+\chapter{The anatomy of XCore }\label{ch:3}
 
 \epigraph{Programming today is a race between software engineers striving to
 build bigger and better idiot-proof programs, and the Universe trying to produce
@@ -204,11 +204,37 @@ generated which also has cache support to increase speed and avoid useless
 object instantiation.
 	
 \section {Evaluation}
+		In order to properly evaluate the framework usability and also to discover 
+additional improvements I've reimplemented the tool InsiderView by using my
+framework. InsiderView is an Eclipse plugin of CodePro. It makes available all
+the metric system of CodePro to Eclipse by using a view in which the entities
+and their properties will be shown. You can operate on the view by expanding a group
+defined by the entity or simple reveling the a new property for the current
+entities.
+		This entire structure was preserved in the implementation of XCoreView.
 
 \subsection {XCoreView}
-	In order to properly evaluate
-	XCorexView is a tool based on XCorex which implements a series of  software
-	metrics
+
+		The properties, metrics, implemented by XCoreView are limited and have a
+direct equivalent in CodePro:
+		\begin{description}
+		  \item[Name]  Shows the Name of an entity.  Equivalent to the Name
+Property in CodePro
+		  \item[Method Metrics]
+		  		\begin{description}
+		  			\item[]
+		  		\end{description}
+		  \item[Class Metrics]
+		  		\begin{description}
+		  			\item[]
+		  		\end{description}
+		  \item[Groups]
+		  		\begin{description}
+		  			\item[]
+		  		\end{description}
+		\end{description}
+		
+		For a complete evaluation we have
 
 
 
