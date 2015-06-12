@@ -14,6 +14,7 @@ but for this we also need a lot of metrics and wasted time in running them.
 in a single platform. This is not an easy task as you might think. It implies
 creating one or more meta-metamodels which can aggregate the metamodel of the
 different tools, but this is error prone.
+
 	CodePro, its comercial name is inCode\cite{site:inCode}, is an analysis tool
 developed by the LOOSE Research group \cite{tools:inCode} that defines its own 
 set of meta-metamodel, metamodel and model in order to be fully extensible and
@@ -22,24 +23,24 @@ seen in figure \ref{figure:codePro1UML}. But because of the wish of
 extensibility and ease of use there are some major problems which can be easily
 identified:
 		\begin{description}
-		\item[type safety] This feature is lost due to the fact that plugins are
+			\item[type safety] This feature is lost due to the fact that plugins are
 are loaded and configured on runtime. Every entity or result must be cast to the
 appropriate type before it can be processed. 
-		\item[magic identifiers] Every plugin has its own string identifier which 
+			\item[magic identifiers] Every plugin has its own string identifier which 
 must be used if we want to apply a property computer or group builder  
 		\end{description}
 	
 \section{Goals and Contributions}
 	
 	Our purpose for this thesis is to present a solution for the problems presented
-in the previous sections.  We shall present an innovative tool
-called XCorex which can solve the problems. It can do this by providing a flexible
-meta-metamodel which integrates seamlessly with the metamodel of a generic
-tool. The user can provider any number of tools which must be annotated with the
-meta-metamodels provided by the framework. The integration of all the tools and
+in the previous sections.  We shall present an innovative tool called XCorex
+which can solve the problems. It can do this by providing a flexible meta-metamodel 
+which integrates seamlessly with the metamodel of a generic tool. The user can
+provider any number of tools which must be annotated with the meta-metamodels 
+provided by the framework. The integration of all the tools and
 the generation of the appropriate model will be dealt by the XCore tool. Thus we
 are moving all runtime checks that are done by CodePro at compilationtime and
-taking advantage of the type safety rules which are enforced by compilator. 
+taking advantage of the type safety rules which are enforced by the compiler. 
 This also provides an easy integration with the intellisense from every IDE.
 
 	
