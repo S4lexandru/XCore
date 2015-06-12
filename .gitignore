@@ -5,6 +5,7 @@
 *.toc
 *.synctex.gz
 *.swp
+*.lof
 Testing/
 XCorex/
 XCorexView/
