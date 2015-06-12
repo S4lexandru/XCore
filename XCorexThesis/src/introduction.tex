@@ -11,15 +11,56 @@ cases the use of the tools comes to late.\cite{tools:inCode}. And the biggest
 problem yet is that we need very many metrics to properly evaluate our items,
 but for this we also need a lot of metrics and wasted time in running them.
 	For the latter problem there is an obvious solution: unite all of them
-in a single platform. This is not an easy task as you might think.  
-
-
-
+in a single platform. This is not an easy task as you might think. It implies
+creating one or more meta-metamodels which can aggregate the metamodel of the
+different tools, but this is error prone.
+	CodePro, its comercial name is inCode\cite{site:inCode}, is an analysis tool
+developed by the LOOSE Research group \cite{tools:inCode} that defines its own 
+set of meta-metamodel, metamodel and model in order to be fully extensible and
+independent from other platforms, but because of the architecture which can be 
+seen in figure \ref{figure:codePro1UML}. But because of the wish of
+extensibility and ease of use there are some major problems which can be easily
+identified:
+		\begin{description}
+		\item[type safety] This feature is lost due to the fact that plugins are
+are loaded and configured on runtime. Every entity or result must be cast to the
+appropriate type before it can be processed. 
+		\item[magic identifiers] Every plugin has its own string identifier which 
+must be used if we want to apply a property computer or group builder  
+		\end{description}
+	
 \section{Goals and Contributions}
+	
+	Our purpose for this thesis is to present a solution for the problems presented
+in the previous sections.  We shall present an innovative tool
+called XCorex which can solve the problems. It can do this by providing a flexible
+meta-metamodel which integrates seamlessly with the metamodel of a generic
+tool. The user can provider any number of tools which must be annotated with the
+meta-metamodels provided by the framework. The integration of all the tools and
+the generation of the appropriate model will be dealt by the XCore tool. Thus we
+are moving all runtime checks that are done by CodePro at compilationtime and
+taking advantage of the type safety rules which are enforced by compilator. 
+This also provides an easy integration with the intellisense from every IDE.
+
 	
 	
 
 
 \section {Organization}
+	Chapter 2.  A thorough presentation of the fundamental concepts that are going
+to be used in this work in order to avoid any ambiguities.	It will cover
+elements regarded eclipse plugin development, meta-metamodeling, metamodeling,
+modeling and how they can be implemented in Java. Also we present a state of the
+art analysis tool CodePro and detail the problem we are solving.
 
+	Chapter 3  The anatomy of XCore will reveal the solution we purpose for the 
+problem. All mechanisms that allow the framework to work as intended (ease of
+use and extensibility) will be explained in details.  Also we introduce a tool
+that I have implemented in order to properly evaluate the tool.
+	
+	Chapter 4  In this chapter we summarize all the information described in
+previous chapters and present the conclusions.
+	
+	In the last chapter, Chapter 5, I present the future work which will be done
+in the development process of the tool.	
 	
