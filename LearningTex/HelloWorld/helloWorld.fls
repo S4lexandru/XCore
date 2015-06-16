@@ -1,0 +1,17 @@
+PWD /Users/SAlexandru/Desktop/Projects/XCorex/LearningTex/HelloWorld
+INPUT /usr/local/texlive/2014/texmf.cnf
+INPUT /usr/local/texlive/2014/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT helloWorld.tex
+OUTPUT helloWorld.log
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+INPUT helloWorld.aux
+INPUT helloWorld.aux
+OUTPUT helloWorld.aux
+OUTPUT helloWorld.pdf
+INPUT /usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT helloWorld.aux
+INPUT /usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb

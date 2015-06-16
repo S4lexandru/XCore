@@ -1,14 +1,14 @@
 #TeXlipse project settings
-#Fri Feb 13 18:21:35 EET 2015
+#Tue Jun 16 17:53:47 EEST 2015
 markTmpDer=true
 builderNum=2
-outputDir=./bin/
+outputDir=bin
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=main.tex
-outputFile=diploma.pdf
+mainTexFile=document.tex
+outputFile=document.pdf
 langSpell=en
 markDer=true
-srcDir=
+srcDir=src
