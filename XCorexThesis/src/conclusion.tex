@@ -3,29 +3,56 @@
 \epigraph{One worthwhile task carried to a successful conclusion is better than
 50 half-finished tasks }{B.C.Forbes}
 
+\section{Conclusion}
+
 	As stated in the beginning of the work, we wanted to ease and improve the way
 analysis tools are developed and integrated in IDEs. Currently they are
 mostly developed by creating a complex metamodel which is able to analyze the
 model which we want to evaluate. This procedure can cause major problems when we
-try to integrate multiple analysis tools in one platform because we have to
-merge different metamodels (architectures) which also have different semantics.
+try to extend the platform with different tools because we have to merge
+different metamodels (architectures) which also have different semantics.
 Another problem is the procedure itself, it is repetitive, thus it can, as we
 have seen in the case of CodePro, it actually did, cause design and
 implementation problems.
 
-	The main problem with CodePro is the lack of type safety due to the need of
-generalization and ease of extensibility. Another problem is the manipulation of
+	The main problem with CodePro is the lack of static type safety due to the
+need of generalization and ease of extensibility. Another problem is the manipulation of
 magic constants in order to identify and describe the plugins that are created
 based on the framework. 
 
-	Our solution for this problems is to develop a meta-metamodel, a model which
-will allow us to describe an analysis tool (metamodel), thus easing the process of 
-integrated different tools. As we have seen the meta-metamodel is
-implemented by using specific Java metadata programming, annotations, and we
+	Our solution for this problems is to implement a meta-metamodel, a model which
+will allow us to describe an analysis tool (metamodel), thus  giving us
+the possibility to easily extend the platform.
+As we have seen the meta-metamodel is implemented by using specific Java metadata programming, annotations, and we
 enforce their semantics be defining an annotation processor. Also, the
 annotation processor has the important role of generating the appropriate code
-for the model based on the user specifications. Because eveyrhing is done at
+for the model based on the user specifications. Because eveyrthing is done at
 compiletime, and not at runtime, the compiler can enforce type safety and IDEs
 can provide nice intellisense which will ease us in the development process.
+
+	For evaluation we have reimplemented InsiderView, an eclipse plugin that
+exposes CodePro to eclipse users. Table \ref{table:aggregated} shows that our
+tools has helped in removing all the magic strings and casts from the code
+making it statically typed. It also shows that the complexity of the code has
+decreased, making the code easier to understand and maintain.
 	
 	
+\section{Future Work}
+
+	In the future we would like to extend the framework to be integrate with the
+incremental build systems that are present in major IDEs such as Eclipse and
+IntelliJ. Currently when using the tool and have added or removed entities that
+are annotated with elements from the framework you will need to rebuild the
+entire projects. This is due to the lack of partial information provided by the
+compiler when incremental builds are used. 
+
+	Major improvements would be the possibility of integrating multiple models in
+the same tool. For example we may want to design a software tool that uses some
+model as JDT, but we would like to take advantage of the Wallace model also
+(because we want to provider a larger acceptance or optimize our application).\\
+	Another improvement would be the possibility of sandboxing new add-ons. When
+we develop a tool we usually develop a core, formed from a series of elementary
+elements which rarely are changed, and add as we need different plugins. It
+will be great for the user if he can develop the new plugin in isolation with respect 
+to other developers so it does not interfere with them and also if it does not
+affect the core.

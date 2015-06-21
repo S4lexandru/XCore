@@ -10,6 +10,11 @@ Chris Aniszczyk.
 Grady Booch.
 \newblock \url{http://www.evinw.com/w/oop-concepts-php/}.
 
+\bibitem{thesis:CristianCaloghera}
+Cristian Caloghera-Ianeș.
+\newblock Evolutionary integrated analysis environment for software systems,
+  2004.
+
 \bibitem{dictionary:modeling}
 English Dictionary.
 \newblock \url{http://dictionary.reference.com/browse/modeling}.
@@ -50,7 +55,7 @@ neildo.
 
 \bibitem{website:metaprogramming}
 Abdelmonaim Remani.
-\newblock The art of metaprogramming in java.
+\newblock The art of metaprogramming in {J}ava.
 \newblock
   \url{http://www.slideshare.net/PolymathicCoder/the-art-of-metaprogramming-in-java},
   2012.

@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt,twoside,openright]{book}
+\usepackage{bookman}
+\usepackage{listings}
+\usepackage{fancyhdr} 
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{epigraph}
+\usepackage{url}
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs,caption,fixltx2e}
+\usepackage[flushleft]{threeparttable}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[romanian]{babel}
+\usepackage{multirow}
+
+\PrerenderUnicode{ăîșțâĂÎÂȘȚ}
+
+\newcommand{\enquote}[1]{\quotedblbase{}#1\textquotedblright{}}
+
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+
+\newcommand{\newevenside}{
+	\ifthenelse{\isodd{\thepage}}{\newpage}{
+	\newpage
+	\textcolor{white}{placeholder}
+	\newpage
+	}
+}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\renewcommand{\chaptername}{Capitolul}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabelul}
+\renewcommand\listtablename{Lista tabelelor}
+\renewcommand\listfigurename{Lista figurilor}
+\renewcommand\contentsname{Cuprins}
+\renewcommand\bibname{Bibliografie}
+
+\begin{document}
+\input{titlepage}
+\newevenside
+
+\pagestyle{fancy}
+\fancyhead[RE]{\footnotesize{\leftmark}}
+\fancyhead[RO]{\footnotesize{\thepage}}
+\fancyhead[LO]{\footnotesize{\rightmark}}
+\fancyhead[LE]{\footnotesize{\thepage}}
+\fancyfoot{}
+\setcounter{page}{1}
+
+
+\input{document}
+
+\end{document}

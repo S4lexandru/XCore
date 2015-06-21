@@ -4,16 +4,16 @@
 build bigger and better idiot-proof programs, and the Universe trying to produce
 bigger and better idiots. So far, the Universe is winning.}{Rich Cook}
 
-	For the problems presented in chapter \ref{ch:2.2} I have implemented a tool
+	For the problems presented in chapter \ref{ch:2.2} We have implemented a tool
 that defines a meta-metamodel as described in chapter \ref{ch:2.1.1} which will
 allow you to describe the metamodel for the tool you want to implement and it will generate 
-a model based on the data you provided. In order to evaluate the application I
+a model based on the data you provided. In order to evaluate the application we
 have also reimplemented a front-end tool called InsiderView \cite{tools:iPlasma}
 which allows you to integrate different metrics based on the meta-metamodel from 
 CodePro.
 	During the implementation phase there were a number of different ideas
 that were proposed and/or implemented in order to fully understand the
-limitations of annotation processing and code generation in java and also to
+limitations of annotation processing and code generation in {J}ava and also to
 provide the most general solution which can be used by as many users as
 possible.
 
@@ -23,7 +23,7 @@ possible.
 	 
 \begin{figure}
 \centering
-\scalebox{0.5}{\includegraphics{../img/solution/XCorexSystem.png}}
+\scalebox{0.3}{\includegraphics{../img/solution/XCorexSystem.png}}
 \caption{XCorex System overview}
 \label{fig:XCoreSystem}
 \end{figure}
@@ -44,7 +44,7 @@ elements for the model of the application and also enforces a type safe environm
 	The above two components describe the semantics of our system which is enforced 
 by the annotation processor. The processor is, if you will, the brain of system
 which analysis the metadata provided by client with the help of the two
-components and generates the appropriate model. 
+components and generates the appropriate metamodel. 
 
 \subsection{Implementation Details}
 
@@ -53,10 +53,10 @@ components and generates the appropriate model.
 	The annotations we have defined combined with the interfaces, which will be
 presented in the section below form the meta-metamodel of our program as
 describe in section \ref{ch:2.1.1}.
-	As you can see in the code sections below the annotations are only allowed to
-annotate java types, to be more specific only classes, and help us distinguish between
-group builders, which describe any type of relation between a series of elements of the same type, and property
-computers which represent a general description of a metric. 
+	As you can see in the code sections below, the annotations are only allowed to
+annotate {J}ava types. To be more specific only classes. The annotations help us
+distinguish between group builders, which describe any type of relation between a series of elements of the same type, 
+and property computers which represent a general description of a metric. 
 
 		\small
 	\begin{lstlisting}[language=Java,numbers=left]
@@ -121,7 +121,7 @@ interfaces must not exists before, because it will be generated.
 \subsubsection{Annotation Processor}
 	
 	All of the elements presented above, annotations and interfaces, are defined 
-by using the java syntax and thus we are confident that they will be used
+by using the {J}ava syntax and thus we are confident that they will be used
 correctly from that point of view, but they also have semantics attached which
 cannot be enforced by syntax alone. In order to enforce the appropriate
 semantics we have defined an annotation processor which will parse every
@@ -133,7 +133,7 @@ annotations is the responsibility of the compiler. Once our requested
 annotations are identified the compiler will invoke the processor by calling
 the \code{process(Set<? extends TypeElement> annotations,RoundEnvironment roundEnv)}
 method with the annotations it identified and are relevant for us, and the
-corresponding java elements that are attached to them. 
+corresponding {J}ava elements that are attached to them. 
 	Each element is processed, first starting with the PropertyComputers and
 continuing with the GroupBuilders, and the following rules are enforced:
 	
@@ -155,29 +155,37 @@ exclusive
 \begin{figure}
 \centering
 \scalebox{0.4}{\includegraphics{../img/solution/xCorexError.png}}
+\caption{XCore Error Messages}
 \label{fig:xCorexError}
 \end{figure}
 	For the rest of the elements, which are valid, the entity type defined in the
 interface as a type parameter is extracted by using the mirror api provided by
 the compiler and the appropriate code. For each unique entity type found, an
-interface is generated which implements the XEntity markup interface and which
-contains a method for every PropertyComputer that uses this type and a method
-for every GroupBuilder which uses this entity for generating the elements of the
-group. Also if any comments are associated with the PropertyComputers or
-GroupBuilders they are preserved in the generated code. Figure
-\ref{fig:xCorexCodeExample} and \ref{fig:xCorexRunExample} show an example on
-how the code must be written and what is generated.
+interface is generated which implements the XEntity markup interface. The
+interface will contain a method for every PropertyComputer that uses
+this type. Also, it will contain a method for every GroupBuilder which uses
+this entity for generating the elements of the group. If any comments are
+associated with the PropertyComputers or GroupBuilders they are preserved in the
+generated code. \\
+In Figure \ref{fig:xCoreCommentView} we can see how easily it is for any user to
+find out which property computers or group builders are implemented for the
+entity. The intellisense does all the work.
+In Figure \ref{fig:xCorexRunExample} we can see an implementation of metric and
+what code is generated for it by the tool.
+
 
 \begin{figure}
 \centering
-\scalebox{0.3}{\includegraphics{../img/solution/xCorexCodeExample.png}}
-\label{fig:xCorexCodeExample}
+\scalebox{0.3}{\includegraphics{../img/solution/xCoreCommentView.png}}
+\label{fig:xCoreCommentView}
+\caption{XCore Intellisense}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \scalebox{0.25}{\includegraphics{../img/solution/xCorexRunExample.png}}
 \label{fig:xCorexRunExample}
+\caption{XCore Type Specification}
 \end{figure}
 	
 	Each interface generated in the previous step is implemented by defining the
@@ -190,54 +198,139 @@ the equivalent object from the framework we are using. For example if we are
 using Eclipse JDT framework an equivalent for a XClass entity would be IType.
 By default the method returns Object, but if the user specifies the type as
 shown in figure \ref{fig:xCorexTypeDialogBox} the method will return the
-specified type.
+specified type. The menu can be easily access by right on the
+{J}ava project -> XCore.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \scalebox{0.3}{\includegraphics{../img/solution/xCorexTypeDialogBox.png}}
 \label{fig:xCorexTypeDialogBox}
 \end{figure}
 
 	The implementation classes are not publicly available.
-In order to be able to instantiate an element a FacetoryMethod class is
+In order to be able to instantiate an element a FactoryMethod class is
 generated which also has cache support to increase speed and avoid useless
 object instantiation.
 	
 \section {Evaluation}
 		In order to properly evaluate the framework usability and also to discover 
-additional improvements I've reimplemented the tool InsiderView by using my
-framework. InsiderView is an Eclipse plugin of CodePro. It makes available all
-the metric system of CodePro to Eclipse by using a view in which the entities
+additional improvements I have reimplemented the tool InsiderView by using the
+XCore framework. InsiderView is an Eclipse plugin of CodePro. It makes available
+all the metric system of CodePro to Eclipse by using a view in which the entities
 and their properties will be shown. You can operate on the view by expanding a group
 defined by the entity or simple reveling the a new property for the current
 entities.
 		This entire structure was preserved in the implementation of XCoreView.
 
-\subsection {XCoreView}
-
 		The properties, metrics, implemented by XCoreView are limited and have a
-direct equivalent in CodePro:
-		\begin{description}[labelindent=2cm]
-		  \item[Name]  Shows the Name of an entity.  Equivalent to the Name
-Property in CodePro
-		  \item[Method Metrics]
-		  		\begin{description}
-		  			\item[]
-		  		\end{description}
-		  \item[Class Metrics]
-		  		\begin{description}
-		  			\item[]
-		  		\end{description}
-		  \item[Groups]
-		  		\begin{description}
-		  			\item[]
-		  		\end{description}
+direct equivalent in CodePro. Some of this metrics are:
+		
+		\begin{description}
+			\item[Name]  Each entity has a computer which returns its name
+			\item[Cyclomatic Complexity (Cyclo, CC)]  {This is a metric for methods which
+indicates the linearly independent paths}
+			\item[Number of Children (NOC)] {Measures the number of direct descendants of
+a class.}
+			\item[Lines of Code (LOC)] Measure the number of written code lines of a
+given entity (class, method)
+			\item[Weight of Class (WOC)] Identifies if a class is a data class. 
 		\end{description}
 		
-		For a complete evaluation we have
+		We have implemented 13 different metrics. Each metric was compared based on
+the number of lines written, the cyclomatic complexity of the compute method,
+the number of casts used and the number of magic strings used. All of this
+values can be seen in table \ref{table:metricMesure}.
 
-\subsection {Evaluation Metrics}
+		The aggregated values of the evaluation can be seen in \ref{table:aggregated}. 
+It is often the case with framework that alot of boiler plate code must be
+written in order to properly configure them. In this case this is not true. In
+green you can see that the number of lines has remained the same, showing that no boiler plate code is 
+needed.  
+
+		One of the most important things is that the overall complexity of the code
+has been halved when using XCore. This means that the code is now easier to
+understand and maintain. Another confirmation of this is that number of casts and magic strings
+has been reduced to zero. Our goal for getting rid of this elements and having
+statically typed plugins has been reached.
+		
+\begin{table}[h]
+\centering
+\caption{Aggregated values of the comparison. The relevant values have been
+highlighted}
+\label{table:aggregated}
+\resizebox{\textwidth}{!}{%
+	\begin{tabular}{@{}ccccc@{}}
+	\toprule
+	 & Number of Lines & Cyclomatic Complexity & Number of Casts & Number of Magic Strings \\ \midrule
+	Avg CodePro & \cellcolor[HTML]{32CB00}34.153 & \cellcolor[HTML]{F8FF00}4.307 & 1.796 & 2.230 \\
+	Avg XCoreView & \cellcolor[HTML]{32CB00}31.384 & \cellcolor[HTML]{F8FF00}2.384 & 0 & 0 \\
+	Sum CodePro & 444 & 56 & \cellcolor[HTML]{FD6864}23 & \cellcolor[HTML]{FD6864}29 \\
+	Sum XCoreView & 408 & 31 & \cellcolor[HTML]{FD6864}0 & \cellcolor[HTML]{FD6864}0
+	\end{tabular}
+}
+\end{table}		
 
 
-
-	
+\begin{table}
+\centering
+\caption{13 different metrics from CodePro and XCoreView compared}
+\label{my-label}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\toprule
+\multicolumn{1}{|l|}{Framework Name} & Metric Name & \multicolumn{1}{l|}{Number of Lines of Code} & \multicolumn{1}{l|}{Number of Casts} & \multicolumn{1}{l|}{Cyclomatic Complexity} & \multicolumn{1}{l|}{Number of Magic Strings} \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+Code Pro & \cellcolor[HTML]{FFFFFF} & 83 & 2 & 4 & 1 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Cyclomatic Complexity} & 110 & 0 & 1 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 44 & 2 & 5 & 1 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}LOC} & 29 & 0 & 3 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 12 & 0 & 1 & 1 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Name} & 8 & 0 & 1 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 27 & 2 & 2 & 1 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}IsConstructor} & 15 & 0 & 1 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 43 & 3 & 12 & 6 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}IsAccessor} & 19 & 0 & 4 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 19 & 0 & 2 & 6 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}WOC} & 13 & 0 & 2 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 9 & 0 & 1 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}NOC} & 32 & 0 & 1 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 32 & 3 & 4 & 3 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Cyclomatic Avg} & 17 & 0 & 2 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 36 & 3 & 4 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Method Group} & 23 & 0 & 2 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 15 & 0 & 1 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XcoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Public Method Group} & 19 & 0 & 3 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 39 & 3 & 4 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Attributes Group} & 19 & 0 & 3 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 65 & 3 & 13 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Classes Group} & 25 & 0 & 5 & 0 \\ \midrule
+\rowcolor[HTML]{FFFFFF} 
+CodePro & \cellcolor[HTML]{FFFFFF} & 35 & 2 & 4 & 2 \\ \cmidrule(r){1-1} \cmidrule(l){3-6} 
+\rowcolor[HTML]{FFFFFF} 
+XCoreView & \multirow{-2}{*}{\cellcolor[HTML]{FFFFFF}Package Group} & 79 & 0 & 3 & 0 \\ \bottomrule
+\end{tabular}
+}
+\end{table}	
